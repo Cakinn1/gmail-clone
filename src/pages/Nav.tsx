@@ -5,11 +5,11 @@ import { FaUser } from "react-icons/fa";
 import { FaTh } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoOptionsSharp } from "react-icons/io5";
-import BurgerMenu from "../components/nav/BurgerMenu";
+import BurgerMenu from "../components/Nav/BurgerMenu";
 export default function Nav() {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   return (
-    <div className="px-6 flex md:justify-between flex-col md:flex-row  text-[#5f6368] items-center">
+    <div className="px-4 flex md:justify-between border-b flex-col md:flex-row  text-[#5f6368] items-center">
       <div className="flex items-center gap-x-4">
         <div
           className="nav__hover--icon relative"
