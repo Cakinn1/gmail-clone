@@ -15,9 +15,10 @@ export default function MailModal(props: MailModalProps) {
   const { mailData, setMailData } = props;
   const { isComposeOpen, setIsComposeOpen } = useContext(composeContext);
   const { setData } = useContext(dataContext);
+  const [counter, setCounter] = useState<number>(1);
 
   const newData: DataProps = {
-    id: 2,
+    id: counter,
     date: "testing",
     email: mailData.sendToUser,
     message: mailData.sendToMessage,
@@ -78,7 +79,10 @@ export default function MailModal(props: MailModalProps) {
       </div>
       <div className="bg-[#303030] text-white p-3 ">
         <button
-          onClick={() => addNewData(newData, setData)}
+          onClick={() => {
+            addNewData(newData, setData);
+            setCounter((prevCounter) => prevCounter + 1);
+          }}
           className="bg-blue-600 hover:opacity-45 duration-300 p-2 text-sm px-4 rounded-md"
         >
           Send

@@ -4,6 +4,12 @@ import { fetchDataWithTimeout } from "../../lib/data";
 import { dataContext } from "../../Context/AppProvider";
 import { addNewData } from "../../lib/helpers/addNewData";
 import { DataProps } from "../../lib/typings";
+import Emails from "./Emails";
+import { filteredContext } from "../../Context/FilteredContext";
+import { binContext } from "../../Context/BinContext";
+import { filterArchieveData } from "../../lib/helpers/filterArchieveData";
+import ItemsInBin from "./ItemsInBin";
+import ItemsNotInBin from "./ItemsNotInBin";
 
 export interface MailDataProps {
   sendToUser: string;
@@ -17,7 +23,8 @@ export default function Home() {
     sendToSubject: "",
     sendToMessage: "",
   });
-  const { data, setData } = useContext(dataContext);
+  const { setData } = useContext(dataContext);
+  const { filteredData } = useContext(filteredContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,17 +39,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="ml-[320px] relative flex flex-1 border border-t-0">
-      <h1>home</h1>
+    <div className="ml-[320px] relative flex flex-1">
       <MailModal mailData={mailData} setMailData={setMailData} />
-      {data.map((item) => (
-        <div>
-          <h1>{item.date}</h1>
-          <h1>{item.email}</h1>
-          <h1>{item.message}</h1>
-          <h1>{item.subject}</h1>
-        </div>
-      ))}
+      <div className="w-full">
+        <ItemsInBin />
+        <ItemsNotInBin />
+        {filteredData.map((item) => (
+          <Emails key={item.id} {...item} />
+        ))}
+      </div>
     </div>
   );
 }

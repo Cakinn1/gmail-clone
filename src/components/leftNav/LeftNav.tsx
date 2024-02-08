@@ -1,6 +1,11 @@
 import React, { ReactElement, useContext, useEffect, useState } from "react";
 import { FaAccessibleIcon, FaPlus } from "react-icons/fa";
 import { ComposeContext, composeContext } from "../../Context/ComposeContext";
+import { binContext } from "../../Context/BinContext";
+import { dataContext } from "../../Context/AppProvider";
+import { DataProps } from "../../lib/typings";
+import { filteredContext } from "../../Context/FilteredContext";
+import { filterArchieveData } from "../../lib/helpers/filterArchieveData";
 
 interface NavItemsProps {
   icon: ReactElement;
@@ -11,9 +16,12 @@ interface NavItemsProps {
 }
 const NavItems = (props: NavItemsProps) => {
   const { amount, icon, title, handleSelect, isSelected } = props;
+
   return (
     <div
-      onClick={() => handleSelect(title)}
+      onClick={() => {
+        handleSelect(title);
+      }}
       className={`${
         isSelected === title
           ? "text-[#c04b37] font-bold bg-[#fcecec]"
@@ -31,11 +39,22 @@ const NavItems = (props: NavItemsProps) => {
 
 export default function LeftNav() {
   const { isComposeOpen, setIsComposeOpen } = useContext(composeContext);
+  const { data, setData } = useContext(dataContext);
+  const { archieveData, setArchieveData } = useContext(binContext);
+  const { filteredData, setFilteredData } = useContext(filteredContext);
   const [isSelected, setIsSelected] = useState<string>("Inbox");
+
 
   const handleSelect = (value: string) => {
     setIsSelected(value);
+    if (value === "Bin") {
+      setFilteredData(archieveData);
+    } else {
+      setFilteredData(data);
+    }
   };
+
+
 
   return (
     <div className=" fixed w-[320px] space-y-4 h-full flex flex-col pr-3">
@@ -77,6 +96,13 @@ export default function LeftNav() {
           amount={55}
           icon={<FaAccessibleIcon />}
           title="Sent"
+        />
+        <NavItems
+          isSelected={isSelected}
+          handleSelect={handleSelect}
+          amount={55}
+          icon={<FaAccessibleIcon />}
+          title="Bin"
         />
       </div>
     </div>
