@@ -9,12 +9,13 @@ import { Link } from "react-router-dom";
 
 export default function Emails(props: DataProps) {
   const { date, email, id, message, subject } = props;
-  const { setData, data } = useContext(dataContext);
-  const { setArchieveData } = useContext(binContext);
   const [isFavourite, setIsFavourite] = useState<boolean>(false);
 
   return (
-    <Link to={`/mail/${id}`} className="flex justify-between items-center border-b flex-1 py-3 pr-8">
+    <Link
+      to={`/mail/${id}`}
+      className="flex justify-between items-center border-b flex-1 py-3 pr-8"
+    >
       <div
         className="flex items-center gap-x-6 "
         // onClick={() => filterCurrentTask(setData, setArchieveData, data, id)}

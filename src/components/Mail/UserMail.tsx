@@ -14,6 +14,9 @@ export default function UserMail() {
   const { data } = useContext(dataContext);
   const [currentElement, setCurrentElement] = useState<DataProps | null>(null);
 
+  
+
+
   useEffect(() => {
     if (id) {
       const findCurrentElement = data.find((item) => {

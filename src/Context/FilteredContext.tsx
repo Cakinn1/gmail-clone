@@ -19,7 +19,7 @@ export const filteredContext = createContext<FilteredContextProps>({
 });
 
 export default function FilteredContext({ children }: { children: ReactNode }) {
-  const { data, setData } = useContext(dataContext);
+  const { data } = useContext(dataContext);
   const [filteredData, setFilteredData] = useState<DataProps[]>(data);
 
   useEffect(() => {

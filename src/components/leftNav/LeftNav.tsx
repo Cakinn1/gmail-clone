@@ -6,6 +6,7 @@ import { dataContext } from "../../Context/AppProvider";
 import { DataProps } from "../../lib/typings";
 import { filteredContext } from "../../Context/FilteredContext";
 import { filterArchieveData } from "../../lib/helpers/filterArchieveData";
+import { useLocation, useNavigate } from "react-router";
 
 interface NavItemsProps {
   icon: ReactElement;
@@ -38,13 +39,20 @@ const NavItems = (props: NavItemsProps) => {
 
 export default function LeftNav() {
   const { isComposeOpen, setIsComposeOpen } = useContext(composeContext);
-  const { data, setData } = useContext(dataContext);
-  const { archieveData, setArchieveData } = useContext(binContext);
-  const { filteredData, setFilteredData } = useContext(filteredContext);
+  const { data } = useContext(dataContext);
+  const { archieveData } = useContext(binContext);
+  const { setFilteredData } = useContext(filteredContext);
   const [isSelected, setIsSelected] = useState<string>("Inbox");
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleSelect = (value: string) => {
     setIsSelected(value);
+
+    if (location.pathname.includes("/mail")) {
+      navigate("/");
+    }
+
     if (value === "Bin") {
       setFilteredData(archieveData);
     } else {

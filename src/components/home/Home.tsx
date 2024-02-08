@@ -22,22 +22,6 @@ export default function Home() {
   const { setData, data } = useContext(dataContext);
   const { filteredData } = useContext(filteredContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchDataWithTimeout();
-        setData(response);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-
-    console.log(data)
-  }, [data])
 
 
   return (
