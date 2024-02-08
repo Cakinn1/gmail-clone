@@ -5,3 +5,8 @@
 .nav__hover--icon {
   @apply duration-300 hover:bg-[#f5f5f5] rounded-full p-2 cursor-pointer;
 }
+
+
+.overflow {
+  @apply overflow-hidden
+}

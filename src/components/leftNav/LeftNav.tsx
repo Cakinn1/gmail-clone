@@ -16,7 +16,6 @@ interface NavItemsProps {
 }
 const NavItems = (props: NavItemsProps) => {
   const { amount, icon, title, handleSelect, isSelected } = props;
-
   return (
     <div
       onClick={() => {
@@ -44,7 +43,6 @@ export default function LeftNav() {
   const { filteredData, setFilteredData } = useContext(filteredContext);
   const [isSelected, setIsSelected] = useState<string>("Inbox");
 
-
   const handleSelect = (value: string) => {
     setIsSelected(value);
     if (value === "Bin") {
@@ -53,8 +51,6 @@ export default function LeftNav() {
       setFilteredData(data);
     }
   };
-
-
 
   return (
     <div className=" fixed w-[320px] space-y-4 h-full flex flex-col pr-3">

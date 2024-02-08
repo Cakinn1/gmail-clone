@@ -6,9 +6,11 @@ export const filterCurrentTask = (
   data: DataProps[],
   id: number
 ) => {
-  const findCurrentElement: DataProps | undefined = data.find((item: DataProps) => {
-    return item.id === id;
-  });
+  const findCurrentElement: DataProps | undefined = data.find(
+    (item: DataProps) => {
+      return item.id === id;
+    }
+  );
 
   setBinData((prevData: DataProps[]) => {
     if (findCurrentElement) {
@@ -22,4 +24,5 @@ export const filterCurrentTask = (
       return data.id !== id;
     });
   });
+
 };

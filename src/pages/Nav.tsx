@@ -6,6 +6,7 @@ import { FaTh } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoOptionsSharp } from "react-icons/io5";
 import BurgerMenu from "../components/Nav/BurgerMenu";
+import { Link } from "react-router-dom";
 export default function Nav() {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState<boolean>(false);
   return (
@@ -21,7 +22,9 @@ export default function Nav() {
             setIsBurgerMenuOpen={setIsBurgerMenuOpen}
           />
         </div>
-        <img className="w-32 object-cover" src="/assets/gmail.png" alt="" />
+        <Link to="/">
+          <img className="w-32 object-cover" src="/assets/gmail.png" alt="" />
+        </Link>
       </div>
 
       <div className="flex w-full  md:max-w-[44%]  flex-grow">

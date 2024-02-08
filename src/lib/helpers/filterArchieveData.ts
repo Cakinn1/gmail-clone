@@ -7,5 +7,4 @@ export const filterArchieveData = (
 ) => {
   setPreviousData([]);
   setFilteredData(data);
-  return true
 };
