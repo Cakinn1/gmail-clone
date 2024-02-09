@@ -6,6 +6,7 @@ import InputFields from "./InputFields";
 import { addNewData } from "../../lib/helpers/addNewData";
 import { dataContext } from "../../Context/AppProvider";
 import { DataProps } from "../../lib/typings";
+import { trimmedDateString } from "../../lib/constants";
 
 interface MailModalProps {
   mailData: MailDataProps;
@@ -19,7 +20,7 @@ export default function MailModal(props: MailModalProps) {
 
   const newData: DataProps = {
     id: counter,
-    date: "testing",
+    date: trimmedDateString,
     email: mailData.sendToUser,
     message: mailData.sendToMessage,
     subject: mailData.sendToSubject,

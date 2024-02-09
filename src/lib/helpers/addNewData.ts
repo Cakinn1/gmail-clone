@@ -5,6 +5,6 @@ export const addNewData = (
   setPreviousData: React.Dispatch<React.SetStateAction<DataProps[]>>
 ) => {
   setPreviousData((prevData) => {
-    return [...prevData, newData];
+    return [...prevData, newData]
   });
 };

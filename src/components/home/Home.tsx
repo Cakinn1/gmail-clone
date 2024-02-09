@@ -19,10 +19,7 @@ export default function Home() {
     sendToSubject: "",
     sendToMessage: "",
   });
-  const { setData, data } = useContext(dataContext);
   const { filteredData } = useContext(filteredContext);
-
-
 
   return (
     <div className="relative flex flex-1">
