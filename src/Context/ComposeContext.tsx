@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from "react";
-
+import { ReactNode, createContext, useContext, useState } from "react";
 
 // define the actually context (whats being based down)
 interface ComposeContextProps {
@@ -14,7 +13,7 @@ export const composeContext = createContext<ComposeContextProps>({
 });
 
 // this is what we wrap the entire component with
-export const ComposeContext = ({ children }: { children: any }) => {
+export const ComposeContext = ({ children }: { children: React.ReactNode }) => {
   const [isComposeOpen, setIsComposeOpen] = useState<boolean>(false);
 
   return (

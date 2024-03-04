@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useContext, createContext, Provider } from "react";
-import { DataProps } from "../lib/typings";
-import { fetchDataWithTimeout } from "../lib/data";
+import { DataProps } from "../types/typings";
+import useFetchData from "../hooks/useFetchData";
 
 export interface ContextProps {
   data: DataProps[];
@@ -14,20 +14,12 @@ export const dataContext = createContext<ContextProps>({
 });
 
 export default function AppProvider({ children }: { children: any }) {
+  const fetchedData = useFetchData();
   const [data, setData] = useState<DataProps[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchDataWithTimeout();
-        setData(response);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-    console.log("mounted again");
-  }, []);
+    setData(fetchedData.productData);
+  }, [fetchedData.productData]);
 
   return (
     <dataContext.Provider value={{ data, setData }}>

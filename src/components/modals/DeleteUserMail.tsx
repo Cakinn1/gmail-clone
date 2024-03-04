@@ -2,8 +2,6 @@ import React, { useContext, useEffect } from "react";
 import { deleteModalContext } from "../../Context/DeleteModalContext";
 import { dataContext } from "../../Context/AppProvider";
 import { binContext } from "../../Context/BinContext";
-import { filterCurrentTask } from "../../lib/helpers/filterCurrentTask";
-import { filterMail } from "../../lib/helpers/filterMail";
 import { useLocation, useNavigate } from "react-router";
 
 interface DeleteUserMailProps {
@@ -16,6 +14,23 @@ export default function DeleteUserMail(props: DeleteUserMailProps) {
   const { setData, data } = useContext(dataContext);
   const { setArchieveData } = useContext(binContext);
   const navigate = useNavigate();
+
+  function handleFilterData() {
+    setData(data.filter((item) => item.id !== id));
+    setArchieveData((prevData) => {
+      const findCurrentElement = data.find((item) => {
+        return item.id === id;
+      });
+
+      if (findCurrentElement) {
+        return [...prevData, findCurrentElement];
+      } else {
+        return prevData;
+      }
+    });
+    setIsDeleteModalOpen(false);
+    navigate("/");
+  }
 
   return (
     <div className="fixed top-0 left-0 bg-black text-black bg-opacity-60 w-full h-full">
@@ -32,11 +47,7 @@ export default function DeleteUserMail(props: DeleteUserMailProps) {
             Cancel
           </button>
           <button
-            onClick={() => {
-              filterMail(setData, id, setArchieveData, data);
-              setIsDeleteModalOpen(false);
-              navigate("/");
-            }}
+            onClick={() => handleFilterData()}
             className="w-[50%] hover:opacity-60 duration-300 ml-4 rounded-md bg-red-500"
           >
             Delete

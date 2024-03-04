@@ -1,10 +1,7 @@
 import React, { useContext, useState } from "react";
-import { DataProps } from "../../lib/typings";
+import { DataProps } from "../../types/typings";
 import { IoStar } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
-import { filterCurrentTask } from "../../lib/helpers/filterCurrentTask";
-import { dataContext } from "../../Context/AppProvider";
-import { binContext } from "../../Context/BinContext";
 import { Link } from "react-router-dom";
 
 export default function Emails(props: DataProps) {

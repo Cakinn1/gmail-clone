@@ -3,9 +3,7 @@ import { FaAccessibleIcon, FaPlus } from "react-icons/fa";
 import { ComposeContext, composeContext } from "../../Context/ComposeContext";
 import { binContext } from "../../Context/BinContext";
 import { dataContext } from "../../Context/AppProvider";
-import { DataProps } from "../../lib/typings";
 import { filteredContext } from "../../Context/FilteredContext";
-import { filterArchieveData } from "../../lib/helpers/filterArchieveData";
 import { useLocation, useNavigate } from "react-router";
 
 interface NavItemsProps {

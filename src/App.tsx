@@ -4,7 +4,7 @@ import LeftNav from "./components/LeftNav/LeftNav";
 import Main from "./pages/Main";
 import { ComposeContext } from "./Context/ComposeContext";
 import UserMail from "./components/Mail/UserMail";
-import AppProvider, { dataContext } from "./Context/AppProvider";
+import AppProvider from "./Context/AppProvider";
 import BinContext from "./Context/BinContext";
 import FilteredContext from "./Context/FilteredContext";
 import DeleteModalContext from "./Context/DeleteModalContext";

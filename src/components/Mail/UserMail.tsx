@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import UserMailHeader from "./UserMailHeader";
 import { dataContext } from "../../Context/AppProvider";
-import { DataProps } from "../../lib/typings";
+import { DataProps } from "../../types/typings";
 import UserMailMessage from "./UserMailMessage";
 
 export interface UserMailProps {
@@ -13,9 +13,6 @@ export default function UserMail() {
   const { id } = useParams();
   const { data } = useContext(dataContext);
   const [currentElement, setCurrentElement] = useState<DataProps | null>(null);
-
-  
-
 
   useEffect(() => {
     if (id) {

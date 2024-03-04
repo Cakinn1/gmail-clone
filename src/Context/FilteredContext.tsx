@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { DataProps } from "../lib/typings";
+import { DataProps } from "../types/typings";
 import { dataContext } from "./AppProvider";
 
 interface FilteredContextProps {

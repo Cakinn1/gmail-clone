@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { DataProps } from "../lib/typings";
+import { DataProps } from "../types/typings";
 
 export interface BinContextProps {
   archieveData: DataProps[];
@@ -11,12 +11,12 @@ export const binContext = createContext<BinContextProps>({
   setArchieveData: () => [],
 });
 
-export default function BinContext({children}: {children: any}) {
-    const [archieveData, setArchieveData] = useState<DataProps[]>([])
+export default function BinContext({ children }: { children: any }) {
+  const [archieveData, setArchieveData] = useState<DataProps[]>([]);
 
   return (
-    <binContext.Provider value={{archieveData, setArchieveData}}>
-        {children}
+    <binContext.Provider value={{ archieveData, setArchieveData }}>
+      {children}
     </binContext.Provider>
-  )
+  );
 }
