@@ -5,13 +5,12 @@ import { useContext, useState } from "react";
 import { deleteModalContext } from "../../Context/DeleteModalContext";
 import DeleteUserMail from "../modals/DeleteUserMail";
 
+// cope commit
 export default function UserMailHeader(props: UserMailProps) {
   const { currentElement } = props;
   const { isDeleteModalOpen, setIsDeleteModalOpen } =
     useContext(deleteModalContext);
   const upperCaseSubject = useUpperCase({ str: currentElement?.subject });
-
-  
 
   return (
     <div className="flex justify-between items-center border-b pb-4 ">
