@@ -7,7 +7,7 @@ import AppProvider from "./Context/AppProvider";
 import BinContext from "./Context/BinContext";
 import FilteredContext from "./Context/FilteredContext";
 import DeleteModalContext from "./Context/DeleteModalContext";
-import LeftNav from "./components/LeftNav";
+import LeftNav from "./components/LeftNav/LeftNav";
 
 export default function App() {
   // testn

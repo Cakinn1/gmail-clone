@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { DataProps } from "../types/typings";
+import { DataProps } from "../../types/typings";
 import { IoStar } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
