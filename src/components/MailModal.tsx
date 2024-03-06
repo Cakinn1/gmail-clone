@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { composeContext } from "../../Context/ComposeContext";
+import { composeContext } from "../Context/ComposeContext";
 import { FaXmark } from "react-icons/fa6";
 import { MailDataProps } from "./Home";
 import InputFields from "./InputFields";
-import { dataContext } from "../../Context/AppProvider";
-import { DataProps } from "../../types/typings";
-import { trimmedDateString } from "../../utils/constants";
+import { dataContext } from "../Context/AppProvider";
+import { DataProps } from "../types/typings";
+import { trimmedDateString } from "../utils/constants";
 
 interface MailModalProps {
   mailData: MailDataProps;
@@ -84,7 +84,7 @@ function MailMainContent(props: MailMainContentProps) {
       };
     });
   }
-  
+
   return (
     <div>
       <InputFields

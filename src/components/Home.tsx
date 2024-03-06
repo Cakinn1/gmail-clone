@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import MailModal from "./MailModal";
 import Emails from "./Emails";
-import { filteredContext } from "../../Context/FilteredContext";
-import { dataContext } from "../../Context/AppProvider";
-import { binContext } from "../../Context/BinContext";
-import { DataProps, ItemsInBinProps } from "../../types/typings";
+import { filteredContext } from "../Context/FilteredContext";
+import { dataContext } from "../Context/AppProvider";
+import { binContext } from "../Context/BinContext";
+import { DataProps, ItemsInBinProps } from "../types/typings";
 
 export interface MailDataProps {
   sendToUser: string;
