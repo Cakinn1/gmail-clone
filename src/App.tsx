@@ -7,10 +7,9 @@ import AppProvider from "./Context/AppProvider";
 import BinContext from "./Context/BinContext";
 import FilteredContext from "./Context/FilteredContext";
 import DeleteModalContext from "./Context/DeleteModalContext";
+import LeftNav from "./components/LeftNav";
 
 export default function App() {
-
-
   // testn
   return (
     <Router>
@@ -22,7 +21,7 @@ export default function App() {
                 <FilteredContext>
                   <Nav />
                   <div className="flex flex-1 gap-x-4  ">
-                    {/* <LeftNav /> */}
+                    <LeftNav />
                     <div className="flex flex-1 ml-[320px]">
                       <Routes>
                         <Route path="/" element={<Main />} />

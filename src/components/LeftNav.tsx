@@ -1,9 +1,9 @@
 import React, { ReactElement, useContext, useEffect, useState } from "react";
 import { FaAccessibleIcon, FaPlus } from "react-icons/fa";
-import { ComposeContext, composeContext } from "../../Context/ComposeContext";
-import { binContext } from "../../Context/BinContext";
-import { dataContext } from "../../Context/AppProvider";
-import { filteredContext } from "../../Context/FilteredContext";
+import { ComposeContext, composeContext } from "../Context/ComposeContext";
+import { binContext } from "../Context/BinContext";
+import { dataContext } from "../Context/AppProvider";
+import { filteredContext } from "../Context/FilteredContext";
 import { useLocation, useNavigate } from "react-router";
 
 interface NavItemsProps {
