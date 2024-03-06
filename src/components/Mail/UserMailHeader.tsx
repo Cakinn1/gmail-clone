@@ -12,6 +12,7 @@ export default function UserMailHeader(props: UserMailProps) {
     useContext(deleteModalContext);
   const upperCaseSubject = useUpperCase({ str: currentElement?.subject });
 
+
   return (
     <div className="flex justify-between items-center border-b pb-4 ">
       <div className="flex gap-x-4 items-center">

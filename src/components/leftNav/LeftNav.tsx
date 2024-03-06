@@ -17,9 +17,7 @@ const NavItems = (props: NavItemsProps) => {
   const { amount, icon, title, handleSelect, isSelected } = props;
   return (
     <div
-      onClick={() => {
-        handleSelect(title);
-      }}
+      onClick={() => handleSelect(title)}
       className={`${
         isSelected === title
           ? "text-[#c04b37] font-bold bg-[#fcecec]"

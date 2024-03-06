@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./pages/Nav";
-import LeftNav from "./components/LeftNav/LeftNav";
 import Main from "./pages/Main";
 import { ComposeContext } from "./Context/ComposeContext";
 import UserMail from "./components/Mail/UserMail";
@@ -8,6 +7,7 @@ import AppProvider from "./Context/AppProvider";
 import BinContext from "./Context/BinContext";
 import FilteredContext from "./Context/FilteredContext";
 import DeleteModalContext from "./Context/DeleteModalContext";
+import LeftNav from "./components/LeftNav/LeftNav";
 
 export default function App() {
   return (
