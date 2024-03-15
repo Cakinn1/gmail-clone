@@ -56,6 +56,8 @@ export default function LeftNav() {
     }
   };
 
+  console.log('cope')
+
   return (
     <div className=" fixed w-[320px] space-y-4 h-full flex flex-col pr-3">
       <div className="flex w-fit px-4 mt-4">
